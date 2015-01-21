@@ -1,0 +1,45 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+var url = "http://localhost:3000/"
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url);
+xhr.addEventListener('load', function(e) {
+console.log(xhr.responseText);
+var d=xhr.responseText;
+var parsed=JSON.parse(d);
+
+var body=document.querySelector("body");
+var p=document.createElement("p");
+body.appendChild(p);
+p.innerText=parsed;
+//var object=parsed.results;
+//console.log(object);
+// var key = object.results[0].;
+// console.log(key);
+
+// object.forEach(function(datum)
+// {
+// var body=document.querySelector("body");
+// var li = document.createElement("li");
+// body.appendChild(li);
+// //li.innerText=Object.keys(datum);
+// console.log(datum);
+//
+// var values = Object.keys(datum);
+// values.forEach(function(value)
+// {
+// console.log(datum[value]);
+// console.log(value);
+//
+// li.innerText=Object.keys(datum)+": "+datum[value];
+// })
+// console.log(Object.keys(datum));
+// });
+});
+xhr.send();
+</script>
+</body>
+</html>
